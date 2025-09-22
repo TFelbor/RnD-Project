@@ -37,11 +37,11 @@ Hardware
 
 * Install ROS 2 Jazzy on the Raspberry Pi 4 and workstations. Follow the ROS 2 installation guide.
 * Install dependencies:sudo apt update
-'''bash
+```bash
 sudo apt install python3-opencv python3-pip
 pip3 install mediapipe tensorflow
 sudo apt install ros-jazzy-turtlebot3 ros-jazzy-turtlebot3-msgs
-'''
+```
 
 * Set up ROS networking for SSH/remote control (ensure stable Ethernet or Wi-Fi).
 * Install Gazebo:sudo apt install ros-jazzy-gazebo-ros-pkgs
@@ -52,16 +52,16 @@ sudo apt install ros-jazzy-turtlebot3 ros-jazzy-turtlebot3-msgs
 3.  Repository Setup:
 
 * Clone this repository: 
-'''bash
+```bash
 git clone https://github.com/TFelbor/Research-and-Development-Project.git
-'''
+```
 
 * Build the ROS workspace:
-'''bash
+```bash
 cd Research-and-Development-Project
 colcon build
 source install/setup.bash
-'''
+```
 
 
 
@@ -70,31 +70,31 @@ source install/setup.bash
 
 1. Teleoperation Test:
 * Verify hardware functionality:
-'''bash
+```bash
 ros2 run turtlebot3_teleop teleop_keyboard
-'''
+```
 * Ensure the camera streams correctly:
-'''bash
+```bash
 ros2 run image_transport republish --ros-args --remap /image_raw:=/camera/image_raw
-'''
+```
 
 2. Simulation:
 * Launch Gazebo simulation:
 
-'''bash
+```bash
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
-'''
+```
 * Test human-following in simulation before physical deployment.
 
 3. Running the Prototype:
 * Launch the human-following node (after prototyping phase):
-''' bash
+```bash
 ros2 run human_following follow_person
-'''
+```
 * Gesture recognition (post-January 2026):
-'''bash
+```bash
 ros2 run gesture_recognition gesture_control
-'''
+```
 
 ## Project Roadmap
 
